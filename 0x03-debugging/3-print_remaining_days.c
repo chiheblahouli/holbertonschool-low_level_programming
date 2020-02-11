@@ -12,12 +12,35 @@
 
 void print_remaining_days(int month, int day, int year)
 {
-
-if (year % 4 == 0)
-{
-	if (year % 100 == 0)
+	if (year % 4 == 0) 
 	{
-		if (year % 400 == 0)
+        	if (year % 100 == 0) 
+		{
+            	// the year is a leap year if it is divisible by 400.
+            		if (year % 400 == 0) 
+			{
+                		if (month >= 2 && day >= 60)
+				{
+					day++;
+				}
+				printf("Day of the year: %d\n", day);
+				printf("Remaining days: %d\n", 366 - day);
+			}
+				
+            		else
+			{
+				if (month == 2 && day == 60)
+				{
+					printf("Invalid date: %02d/%02d/%04d\n", month, day -31, year);
+				}
+				else
+				{
+					printf("Day of the year: %d\n", day);
+					printf("Remaining days: %d\n", 365 - day);
+				}
+			}
+		}
+		else
 		{
 			if (month >= 2 && day >= 60)
 			{
@@ -26,32 +49,18 @@ if (year % 4 == 0)
 			printf("Day of the year: %d\n", day);
 			printf("Remaining days: %d\n", 366 - day);
 		}
-	
-		else
-		{
-			if (month == 2 && day == 60)
-			{
-				printf("Invalid date: %02d/%02d/%04d\n", month, day -31, year);
-			}
-			else
-			{
-				printf("Day of the year: %d\n", day);
-				printf("Remaining days: %d\n", 365 - day);
-			}
-		}
-	}
-}
-else
-{
-	if (month == 2 && day == 60)
-	{
-		printf("Invalid date: %02d/%02d/%04d\n", month, day - 31, year);
 	}
 	else
 	{
-		printf("Day of the year: %d\n", day);
-		printf("Remaining days: %d\n", 365 - day);
+		if (month == 2 && day == 60)
+		{
+			printf("Invalid date: %02d/%02d/%04d\n", month, day -31, year);
+		}
+		else
+		{
+			printf("Day of the year: %d\n", day);
+			printf("Remaining days: %d\n", 365 - day);
+		}
 	}
-}
 
 }
