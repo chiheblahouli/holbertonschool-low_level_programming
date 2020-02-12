@@ -2,6 +2,7 @@
 
 /**
  * _islower - check the code for Holberton School students.
+ * @c:function input
  *
  * Return: Always 0.
  */
