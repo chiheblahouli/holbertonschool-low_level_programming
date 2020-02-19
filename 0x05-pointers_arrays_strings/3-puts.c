@@ -1,16 +1,16 @@
 #include "holberton.h"
 /**
-* _puts - main function
-* @str : parameter
-* return : void
-*/
+ * _puts - print string
+ * @str: parameter
+ *
+ * Return: void
+ */
 void _puts(char *str)
 {
-
 while (*str != '\0')
 {
 _putchar(*str);
-str++
+str++;
 }
 _putchar('\n');
 }
