@@ -1,35 +1,37 @@
 #include "holberton.h"
 /**
-*string_toupper - a function that changes all lowercase
-*letters of a string to uppercase.
-*
-*@str: Pointer to the array.
-*
-*Return: int.
-*/
-char *string_toupper(char *str)
+ * rev_string - reverse a string
+ * @str: a string to be reversed
+ *
+ * Return: void
+ */
+void rev_string(char *str)
 {
-	int i = 0, len = _strlen(str);
+	int i;
+	int length = 0;
+	char *origin;
+	char *rev;
+	char tmp;
 
-	for (i = 0; i < len; ++i)
+	origin = str;
+	rev = str;
+
+	while (str[length] != '\0')
+		length++;
+
+
+	for (i = 0; i < length - 1; i++)
 	{
-		if (str[i] >= 97 && str[i] <= 122)
-		{
-			str[i] -= 32;
-		}
+		rev++;
 	}
-	return (str);
-}
-/**
-* _strlen - function that that returns the length of a string.
-* @s : pointer to a string.
-* Return: string lenght
-*/
-int _strlen(char *s)
-{
-	int i = 0;
 
-	while (s[i] != '\0')
-		i++;
-	return (i);
+	for (i = 0; i < length / 2; i++)
+	{
+		tmp = *rev;
+		*rev = *origin;
+		*origin = tmp;
+
+		origin++;
+		rev--;
+	}
 }
