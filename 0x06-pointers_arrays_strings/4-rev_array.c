@@ -1,27 +1,22 @@
 #include "holberton.h"
+#include <stdio.h>
 /**
- * print_rev - print a string reverselly
- * @str: the string to be reversed
- *
- * Return: void
- */
-void print_rev(char *str)
+*reverse_array - a reverses the content of an array of integers.
+*
+*@a: Pointer to the array.
+*@n: size of the array.
+*
+*Return: int.
+*/
+
+void reverse_array(int *a, int n)
 {
-	int i;
-	int length = 0;
-	char *tmp;
+	int i = 0, tmp;
 
-	tmp = str;
-
-	while (*tmp != '\0')
+	for (i = 0; i < n / 2; ++i)
 	{
-		length++;
-		tmp++;
+		tmp = a[i];
+		a[i] = a[n - i - 1];
+		a[n - i - 1] = tmp;
 	}
-
-	for (i = length - 1; i >= 0; i--)
-	{
-		_putchar(str[i]);
-	}
-	_putchar('\n');
 }
