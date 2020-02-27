@@ -1,30 +1,33 @@
+#include <stdio.h>
 #include "holberton.h"
+/**
+ * _sqrt - Tests a
+ * @a: The number to test with b
+ * @b: The squared number to find the square
+ *
+ * Return: -1 else a
+ */
+
+int _sqrt(int a, int b)
+{
+if (a > b)
+return (-1);
+if ((a * a) == b)
+return (a);
+else
+return (_sqrt(++a, b));
+}
 
 /**
- * _sqrt_recursion - compute the natural square of number
- * @n: the integer
- * Return: natural square
+ * _sqrt_recursion - natural square root
+ * @n: The number
+ *
+ * Return: -1 and else the square root of n
  */
+
 int _sqrt_recursion(int n)
 {
-	int i = 0;
-
-	return (check_sqrt(i, n));
-
-}
-/**
- * check_sqrt - compute the natural square of n
- * @i: sqrt
- * @n: integer
- * Return: i if exist -1 else
- */
-int check_sqrt(int i, int n)
-{
-	if ((i * i) == n)
-		return (i);
-
-	else if (i <= n)
-		return (check_sqrt(i + 1, n));
-	else
-		return (-1);
+if (n == 0)
+return (-1);
+return (_sqrt(1, n));
 }
