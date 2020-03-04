@@ -54,6 +54,8 @@ for (i = 0; i < ac; i++)
 {
 	s = str_concat(s, av[i]);
 	s = str_concat(s, "\n");
+	if (s == NULL)
+        	return (NULL);
 }
 return (s);
 }
