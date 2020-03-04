@@ -1,28 +1,25 @@
-#include <stdlib.h>
 #include "holberton.h"
+#include <stdio.h>
+#include <stdlib.h>
 /**
-*_strdup - duplicate an str
-*@str: the str
-*Return: Always 0
+* *_strdup - prints a grid of integers
+* @str: string.
+* Return: m.
 */
 char *_strdup(char *str)
 {
-int j, i;
+int i;
 char *m;
 if (str == NULL)
-{
 return (NULL);
-}
-for (i = 0; str[i] != '\0'; i++)
-m = malloc(i * sizeof(*m));
-{
+for (i = 0; str[i]; i++)
+m = malloc((i + 1) * sizeof(char));
 if (m == NULL)
 return (NULL);
-}
-for (j = 0; j < i; j++)
+for (i = 0; str[i]; i++)
 {
-c[j] = str[j];
-c[j] = '\0';
+m[i] = str[i];
+m[i] = '\0';
 return (m);
 }
 }
