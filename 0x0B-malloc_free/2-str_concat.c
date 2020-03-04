@@ -26,10 +26,12 @@ while (s2[j] != '\0')
 d = malloc((i + j) * sizeof(char));
 if (d == NULL)
 	return (NULL);
-
-for (k = 0; k < i; k++)
-	d[k] = s1[k];
-for (k = i; k < i + j; k++)
-	d[k] = s2[k - i];
-return (d);
+else
+{
+	for (k = 0; k < i; k++)
+		d[k] = s1[k];
+	for (k = i; k < i + j; k++)
+		d[k] = s2[k - i];
+	return (d);
+}
 }
