@@ -26,13 +26,15 @@ while (s2[j] != '\0')
 d = malloc((i + j + 1) * sizeof(char));
 if (d == NULL)
 	return (NULL);
-else
+if (s1 != '\0' && s2 != '\0')
 {
 	for (k = 0; k < i; k++)
 		d[k] = s1[k];
 	for (k = i; k < i + j; k++)
 		d[k] = s2[k - i];
-	d[i + j] = '\0';
-	return (d);
+	d[k] = '\0';
 }
+else
+	d = "";
+return (d);
 }
