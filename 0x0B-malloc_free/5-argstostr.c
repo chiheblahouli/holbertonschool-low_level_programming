@@ -1,4 +1,4 @@
-*#include "holberton.h"
+#include "holberton.h"
 #include <stdlib.h>
 /**
  * argstostr  - function converts args to string.
