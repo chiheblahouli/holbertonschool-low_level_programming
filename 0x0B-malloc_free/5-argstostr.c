@@ -53,8 +53,6 @@ if (s == NULL)
 for (i = 0; i < ac; i++)
 {
 	s = str_concat(s, av[i]);
-	if (s == NULL)
-        	return (NULL);
 	s = str_concat(s, "\n");
 	if (s == NULL)
         	return (NULL);
