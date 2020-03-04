@@ -21,7 +21,8 @@ m = malloc(sizeof(char) * size);
 
 if (m == NULL)
 	return (NULL);
-else{
+else
+{
 	for (i = 0; i < size; i++)
 	m[i] = c;
 	return (m);
