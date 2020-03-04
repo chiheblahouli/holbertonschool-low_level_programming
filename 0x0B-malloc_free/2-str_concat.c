@@ -32,7 +32,6 @@ else
 		d[k] = s1[k];
 	for (k = i; k < i + j; k++)
 		d[k] = s2[k - i];
-	d[i +  j] = "";
 	return (d);
 }
 }
