@@ -21,15 +21,15 @@ while (s1[i] != '\0')
 	i++;
 while (s2[j] != '\0')
 	j++;
-d = malloc(sizeof(char) * i + j + 1);
+d = malloc(sizeof(char) * (i + j + 1));
 if (d == NULL)
 	return (NULL);
 if (s1 != '\0' && s2 != '\0')
 {
 	for (k = 0; k < i; k++)
-		d[k] = *s1[k];
-	for (k = 0; k < j; k++)
-		d[k + i] = *s2[k];
+		d[k] = s1[k];
+	for (k = i; k < i + j; k++)
+		d[k] = s2[k - i];
 	d[k] = '\0';
 }
 else
