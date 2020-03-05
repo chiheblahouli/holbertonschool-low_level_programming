@@ -3,33 +3,30 @@
 #include <stdlib.h>
 /**
  *string_nconcat - function
- *@s1: char
- *@s2: char
- *@n: int
- *Return: char
+ *@s1: string.
+ *@s2: string.
+ *@n: integer.
+ *Return: string.
  */
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	char *s;
-	unsigned int i, o = k, l2 = 0;
-
+	unsigned int i, l1, l2, j;
+	char s;
 	if (s1 == NULL)
-			s1 = "";
+		s1 = "";
 	if (s2 == NULL)
-			s2 = "";
-	while (s1[o] != '\0')
-			o++;
-	while (s2[k] != '\0')
-			k++;
+		s2 = "";
+	for (l1 = 0; s1[l1] != '\0'; l1++)
+	for (l2 = 0; s2[l2] != '\0'; l2++)
 	if (n >= l2)
-			n = l2;
-			s = malloc(o + n + 1);
+	n = l2;
+	s = malloc(sizeof(char) * (l1 + n + 1));
 	if (s == NULL)
-		return (s);
-	for (i = 0; i < o; i++)
-			s[i] = s1[i];
-	for (i = 0; i < n; i++)
-			s[o + i] = s2[i];
-	s[o + i] = '\0';
-			return (s);
+	return (NULL);
+	for (i = 0; s1[i] != '\0'; i++)
+	s[i] = s1[i];
+	for (j = l1; j < l1 + n; j++)
+	s[j] = s2[j - l1];
+	s[j] = '\0';
+	return (s);
 }
