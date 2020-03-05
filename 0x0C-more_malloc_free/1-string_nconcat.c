@@ -1,31 +1,36 @@
-#include <stdlib.h>
 #include "holberton.h"
+#include <stdio.h>
+#include <stdlib.h>
 /**
-*string_nconcat - function concatenate two strings
-*@s1 : string 1.
-*@s2 : string 2.
-*@n : bytes.
-*Return: Always 0.
-*/
+ * string_nconcat - concatenates two strings
+ * @s1: string 1
+ * @s2: string 2
+ * @n: bytes
+ * Return: pointer
+ */
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-char *s;
-unsigned int i, j, a, b, c;
+	unsigned int i, j, a, b;
+	char *s;
 
-for (i = 0; s1[i] != '\0'; i++)
-for (j = 0; s2[j] != '\0'; j++)
-if (s1 == NULL)
-s1 = "";
-if (s2 == NULL)
-s2 = "";
-
-s = malloc((sizeof(char) * i) + (sizeof(char) * n) + 1);
-if (s == NULL)
-return (NULL);
-for (a = 0; a < i; a++)
-s[a] = s1[a];
-for (y = 0, x = c; b < j || b < n; b++, c++)
-s[c] = s2[b];
-s[z] = '\0';
-return (s);
+	a= 0, b = 0;
+	i = 0;
+	if (s1)
+	while (s1[i++])
+	a++;
+	i = 0;
+	if (s2)
+	while (s2[i++])
+	b++;
+	if (b > n)
+	b = n;
+	s = malloc(sizeof(char) * (a + b + 1));
+	if (!s)
+	return (NULL);
+	for (i = 0; i < a; i++)
+	s[i] = s1[i];
+	for (j = 0; j < b; j++, i++)
+	s[i] = s2[j];
+	s[i] = '\0';
+	return (s);
 }
