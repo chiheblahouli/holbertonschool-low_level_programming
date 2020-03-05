@@ -3,16 +3,16 @@
 #include <stdlib.h>
 #include <limits.h>
 /**
- *malloc_checked - function that allocates memory using malloc.
- *@b: unsigned int.
+ *malloc_checked - function malloc.
+ *@b: integer.
  *Return: void.
  */
 void *malloc_checked(unsigned int b)
 {
-	void *p;
+	void *f;
 
-	p = malloc(b);
-		if (m == NULL)
-	exit(98);
-		return (p);
+	f = malloc(b);
+	if (f == NULL)
+		exit(98);
+	return (f);
 }
