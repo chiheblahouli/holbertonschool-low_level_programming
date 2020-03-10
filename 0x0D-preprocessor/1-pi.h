@@ -1,3 +1,3 @@
-#ifndef PI_H
+#ifndef PIh
 #define PI 3.14159265359
 #endif
