@@ -11,6 +11,6 @@ void free_list(list_t *head)
 	while (head != NULL)
 	bowl = head;
 	head = head->next;
-	free(bowl);
-	free(bowl->str);
+	free(m);
+	free(m->str);
 }
