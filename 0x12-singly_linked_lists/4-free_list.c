@@ -4,13 +4,17 @@
  *@head: pointer.
  *Return: Always 0.
  */
+
 void free_list(list_t *head)
 {
 	list_t *m;
 
-	while (head != NULL)
-	bowl = head;
-	head = head->next;
-	free(m);
-	free(m->str);
+		m = head;
+		while (head != NULL)
+{
+			m = head;
+			head = head->next;
+		free(m->str);
+		free(m);
+}
 }
