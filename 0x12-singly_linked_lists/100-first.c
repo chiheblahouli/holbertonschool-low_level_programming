@@ -5,7 +5,7 @@
  *
  * Return: Always 0.
  */
-void before_execution(void)
+void Before_execution(void)
 
 {
 	printf("You're beat! and yet, you must allow,\n");
