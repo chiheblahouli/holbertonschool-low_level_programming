@@ -1,20 +1,19 @@
 #include "lists.h"
 /**
  *free_list - delete list.
+ *free: free.
  *@head: pointer.
  *Return: Always 0.
  */
 
 void free_list(list_t *head)
-
 {
-
-	list_t *w;
+list_t *b;
 while (head != NULL)
 {
-	w = head;
-	head = head->next;
-	free(w->str);
-	free(w);
+b = head;
+head = head->next;
+free(b->str);
+free(b);
 }
 }
