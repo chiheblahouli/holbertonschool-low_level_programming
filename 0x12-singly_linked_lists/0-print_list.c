@@ -12,7 +12,6 @@ size_t print_list(const list_t *h)
 
 	for (i = 0; h; i++)
 	{
-	while (h != NULL)
 	if (h->str == NULL)
 		printf("[0] (nil)\n");
 	else
