@@ -3,6 +3,7 @@
 /**
  * add_node - add new nodes.
  * @head: the memory.
+ * @malloc: locate memory.
  * @str: string.
  * Return: node.
  **/
