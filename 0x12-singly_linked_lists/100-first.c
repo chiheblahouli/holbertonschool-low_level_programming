@@ -2,7 +2,6 @@
 #include "lists.h"
 /**
  * Before_execution - printf before the main.
- *
  * Return: Always 0.
  */
 void Before_execution(void)
