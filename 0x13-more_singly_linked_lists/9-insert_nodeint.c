@@ -11,18 +11,18 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 	unsigned int i;
 	listint_t *kak, *cto;
 
+	kak = *head;
 	for (i = 0; i < idx - 1; i++)
 	{
-	if (kak == NULL)
-        return (NULL);
 	kak = kak->next;
+	if (kak == NULL)
+	return (NULL);
 	}
-	kak = *head;
 	cto = malloc(sizeof(listint_t));
-	if (new == NULL)
+	if (cto == NULL)
 	return (NULL);
 	cto->n = n;
-	cto->next = mid->next;
+	cto->next = kak->next;
 	kak->next = cto;
 	return (cto);
 }
