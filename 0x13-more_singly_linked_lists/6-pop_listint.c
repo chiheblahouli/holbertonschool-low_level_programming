@@ -5,8 +5,8 @@
  * Return: Always 0.
 */
 int pop_listint(listint_t **head)
-listint_t *cto;
-
+{
+	listint_t *cto;
 	int x;
 	cto = *head;
 	if (*head == NULL)
