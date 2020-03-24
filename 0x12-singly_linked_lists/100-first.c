@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include "lists.h"
+void Before_execution(void)
 /**
  * Before_execution - printf before the main.
  * Return: Always 0.
