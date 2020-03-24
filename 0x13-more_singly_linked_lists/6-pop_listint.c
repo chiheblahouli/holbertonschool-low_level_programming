@@ -11,7 +11,7 @@ listint_t *cto;
 	cto = *head;
 	if (*head == NULL)
 		return (0);
-		x = (*head)->n;
+		x = (*head)->x;
 	*head = cto->next;
 	free(cto);
 	return (x);
