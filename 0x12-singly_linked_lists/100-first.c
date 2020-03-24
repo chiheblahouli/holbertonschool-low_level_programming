@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include "lists.h"
-void Before_execution(void)
+
+void Before_execution(void) __attribute__ ((constructor));
 /**
  * Before_execution - printf before the main.
  * Return: Always 0.
