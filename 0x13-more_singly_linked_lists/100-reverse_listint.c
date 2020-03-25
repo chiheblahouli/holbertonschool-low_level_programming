@@ -9,16 +9,14 @@
  */
 listint_t *reverse_listint(listint_t **head)
 {
-listint_t *cto
-listint_t *nar
+listint_t *cto = NULL;
+listint_t *next = NULL;
 
-*cto = NULL;
-*nar = NULL;
 if (!head)
 return (NULL);
 while (*head)
 {
-	node = (*head)->next;
+	cto = (*head)->next;
 	(*head)->next = next;
 	next = *head;
 	*head = node;
