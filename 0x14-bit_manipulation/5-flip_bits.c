@@ -8,13 +8,13 @@
 */
 unsigned int flip_bits(unsigned long int n, unsigned long int m)
 {
-unsigned int g = 0;
-unsigned long int c;
+unsigned long int g = (n ^ m), c = 0;
 
-c = n ^ m;
-while (c)
-g = g + (c & 1);
-c = c >> 1;
+while (g > 0)
+{
+if (g & 1)
+c++;
+g >>= 1;
 }
-	return (g);
+return (c);
 }
