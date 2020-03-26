@@ -12,7 +12,7 @@ unsigned int g = 0;
 unsigned long int c;
 
 c = n ^ m;
-while (c > 0)
+while (c)
 g = g + (c & 1);
 c = c >> 1;
 }
