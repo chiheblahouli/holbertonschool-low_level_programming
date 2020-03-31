@@ -56,7 +56,7 @@ exit(100);
 
 int main(int nb_arg, char **arg)
 {
-int f1, f2, content1, content2, c1, c2, round;
+int f1, f2, content1, content2, c1, c2;
 char buffer[1024];
 
 if (nb_arg != 3)
@@ -71,8 +71,6 @@ f2 = open(arg[2], O_CREAT | O_TRUNC | O_RDWR, 664);
 if (f2 == -1)
 write_error_99(arg[2]);
 
-content1 = 0;
-round = 0;
 do
 {
 content1 = read(f1, buffer, 1024);
@@ -83,7 +81,6 @@ content2 = write(f2, buffer, 1024);
 if (content2 == -1)
 write_error_99(arg[2]);
 
-round = round + 1;
 } while(content2 == 1024);
 
 c1 = close(f1);
