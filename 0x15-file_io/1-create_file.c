@@ -21,7 +21,8 @@ return (map);
 if (!text_content)
 return (1);
 
-for (len = 0; text_content[len]; len++);
+for (len = 0; text_content[len]; len++)
+	;
 c = write(map, text_content, len);
 
 if (c == -1)
