@@ -16,7 +16,7 @@ return (-1);
 
 map = open(filename, O_WRONLY | O_CREAT | O_TRUNC, 0600);
 if (map == -1)
-return (-1);
+return (map);
 
 if (!text_content)
 return (1);
@@ -24,7 +24,7 @@ return (1);
 for (cto = 0; text_content[cto]; cto++)
 c = write(cto, text_content, map);
 if (c == -1)
-return (-1);
+return (c);
 
 close(map);
 return (1);
