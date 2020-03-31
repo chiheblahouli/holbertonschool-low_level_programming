@@ -79,25 +79,13 @@ content2 = write(f2, buffer, 1024);
 if (content2 == -1)
 write_error_99(arg[2]);
 
-if ((content1 % 1024) == 0)
-{
-content1 = read(f1, buffer, 1024);
-if (content1 == -1)
-read_error_98(arg[1]);
-
-content2 = write(f2, buffer, 1024);
-if (content2 == -1)
-write_error_99(arg[2]);
-}
-
-
 c1 = close(f1);
 if (c1 == -1)
-close_error_100(f1);
+close_error_100(c1);
 
 c2 = close(f2);
 if (c2 == -1)
-close_error_100(f2);
+close_error_100(c2);
 return (0);
 }
 
