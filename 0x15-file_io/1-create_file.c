@@ -22,7 +22,7 @@ if (!text_content)
 return (1);
 
 for (cto = 0; text_content[cto]; cto++)
-c = write(cto, text_content, map);
+c = write(map, text_content, cto);
 if (c == -1)
 return (c);
 
