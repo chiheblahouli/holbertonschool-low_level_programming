@@ -14,7 +14,7 @@ int map, len, c;
 if (!filename)
 return (-1);
 
-map = open(filename, O_APPEND | O_RDWR, 0600);
+map = open(filename, O_APPEND, 0600);
 if (map == -1)
 return (map);
 
