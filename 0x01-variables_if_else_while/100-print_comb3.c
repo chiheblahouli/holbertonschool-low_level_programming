@@ -5,17 +5,38 @@
  */
 int main(void)
 {
-int L;
-int C;
+{
+	int i;
+	int j;
 
-for (L = 48; L <= 56; L++)
-for (C = L + 1; C <= 57; C++)
-if (L != C)
-putchar(L);
-putchar(C);
-if (L < 56)
-putchar(',');
-putchar(' ');
-putchar('\n');
-return (0);
+	i = 48;
+	j = 49;
+	while  ((i < 57) && (j < 58))
+	{
+		putchar(i);
+		putchar(j);
+		if ((i == 56) && (j == 57))
+		{
+			putchar('\n');
+			i++;
+			j++;
+		}
+		else
+		{
+			putchar(44);
+			putchar(32);
+			if (j < 57)
+			{
+				j++;
+			}
+			else
+			{
+				i++;
+				j = i + 1;
+			}
+		}
+
+	}
+
+	return (0);
 }
