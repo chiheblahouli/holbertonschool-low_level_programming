@@ -18,35 +18,37 @@ int main(void)
 		putchar(i);
 		putchar(j);
 		putchar(k);
-	if ((i == 55) && (j == 56) && (k == 57))
+		if ((i == 55) && (j == 56) && (k == 57))
 		{
 			putchar('\n');
 			i++;
 			j++;
 			k++;
 		}
-	else
+		else
 		{
 			putchar(44);
 			putchar(32);
-		if (k < 57)
+			if (k < 57)
 			{
 				k++;
 			}
-		else
+			else
 			{
-		if (j < 56)
+				if (j < 56)
 				{
 					j++;
 					k = j + 1;
 				}
-		else
+				else
 				{
 					i++;
 					j = i + 1;
-}
-}
+				}
+			}
+		}
+
 	}
-	}
+
 	return (0);
 }
