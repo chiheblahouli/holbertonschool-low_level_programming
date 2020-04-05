@@ -75,13 +75,15 @@ f2 = open(arg[2], O_CREAT | O_TRUNC | O_RDWR, 664);
 if (f2 == -1)
 write_error_99(arg[2]);
 
-content1 = read(f1, buffer, 1024);
-if (content1 == -1)
-read_error_98(arg[1]);
+do {
+	content1 = read(f1, buffer, 1024);
+	if (content1 == -1)
+	read_error_98(arg[1]);
 
-content2 = write(f2, buffer, 1024);
-if (content2 == -1)
-write_error_99(arg[2]);
+	content2 = write(f2, buffer, 1024);
+	if (content2 == -1)
+	write_error_99(arg[2]);
+} while (content2 == 1024);
 
 c1 = close(f1);
 if (c1 == -1)
