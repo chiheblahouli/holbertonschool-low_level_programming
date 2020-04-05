@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 /**
- * usage_error_97 - Test copy usage errors.
+ * usage_error_97 - Test copy usage errors
  * Return: 97.
  */
 void usage_error_97(void)
@@ -13,8 +13,8 @@ exit(97);
 
 
 /**
- * read_error_98 - Test read errors.
- * @s: file name.
+ * read_error_98 - Test read errors
+ * @s: pointer to file name
  * Return: 98.
  */
 void read_error_98(char *s)
@@ -24,8 +24,8 @@ exit(98);
 }
 
 /**
- * write_error_99 - Test write errors.
- * @s: file name.
+ * write_error_99 - Test write errors
+ * @s: pointer to file name
  * Return: 99.
  */
 void write_error_99(char *s)
@@ -35,8 +35,8 @@ exit(99);
 }
 
 /**
- * close_error_100 - Test close errors.
- * @fd: file descriptor.
+ * close_error_100 - Test close errors
+ * @fd: file descriptor
  * Return: 100.
  */
 void close_error_100(int fd)
@@ -46,9 +46,9 @@ exit(100);
 }
 
 /**
- * main - copy from a file to another.
- * @arg: argument.
- * @nb_arg: integer.
+ * main - copy from a file to another
+ * @arg: argument
+ * @nb_arg: integer
  * Return: 0 on success, exit with errors oterwise.
  */
 
