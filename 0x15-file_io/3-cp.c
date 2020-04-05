@@ -67,6 +67,15 @@ if (nb_arg != 3)
 usage_error_97();
 
 
+if (arg[1] == NULL)
+read_error_98(arg[1]);
+
+if (arg[2] == NULL)
+write_error_99(arg[2]);
+
+
+
+
 f1 = open(arg[1], O_RDONLY);
 if (f1 == -1)
 read_error_98(arg[1]);
