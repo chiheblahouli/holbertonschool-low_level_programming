@@ -70,8 +70,6 @@ usage_error_97();
 if (arg[1] == NULL)
 read_error_98(arg[1]);
 
-if (arg[2] == NULL)
-write_error_99(arg[2]);
 
 
 
