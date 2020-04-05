@@ -85,8 +85,8 @@ while (content1 != 0)
 {
 content2 = write(f2, buffer, content1);
 if (content2 == -1)
-write_error(arg[2]);
-content1 = read(file_from, buffer, 1024);
+write_error_99(arg[2]);
+content1 = read(f1, buffer, 1024);
 if (content1  == -1)
 read_error_98(arg[1]);
 }
