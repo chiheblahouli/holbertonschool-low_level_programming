@@ -1,9 +1,8 @@
 #include "holberton.h"
-
 /**
- * append text to_file - add text at the end of a file
- * @filename : name of the file.
- * @text_content : content to append inside the file.
+ * append_text_to_file - add text at the end of a file
+ * @filename: name of the file
+ * @text_content: content to append inside the file
  * Return: 1 on success -1 on failure.
  */
 
@@ -14,7 +13,7 @@ int map, len, c;
 if (!filename)
 return (-1);
 
-map = open(filename, O_APPEND |O_RDWR, 0600);
+map = open(filename, O_APPEND | O_RDWR, 0600);
 if (map == -1)
 return (map);
 
