@@ -101,11 +101,11 @@ read_error_98(arg[1]);
 
 c1 = close(f1);
 if (c1 == -1)
-close_error_100(c1);
+close_error_100(f1);
 
 c2 = close(f2);
 if (c2 == -1)
-close_error_100(c2);
+close_error_100(f2);
 return (0);
 }
 
