@@ -60,7 +60,7 @@ exit(100);
 
 int main(int nb_arg, char **arg)
 {
-int f1, f2, content1 = 1, content2, c1, c2;
+int f1, f2, content1 = 1, content2;
 char buffer[1024];
 
 if (nb_arg != 3)
@@ -94,13 +94,13 @@ write_error_99(arg[2]);
 }
 
 
-c1 = close(f1);
-if (c1 == -1)
-close_error_100(f1);
+content1 = close(f1);
+if (content1 == -1)
+close_error_100(content1);
 
-c2 = close(f2);
-if (c2 == -1)
-close_error_100(f2);
+content2 = close(f2);
+if (content2 == -1)
+close_error_100(content2);
 return (0);
 }
 
