@@ -2,9 +2,10 @@
 #include <stdio.h>
 
 /**
- * usage_error_97 - Test copy usage errors
+ * usage_error_97 - Test copy usage errors.
  * Return: 97.
  */
+
 void usage_error_97(void)
 {
 dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
@@ -13,10 +14,11 @@ exit(97);
 
 
 /**
- * read_error_98 - Test read errors
- * @s: pointer to file name
+ * read_error_98 - Test read errors.
+ * @s: pointer to file name.
  * Return: 98.
  */
+
 void read_error_98(char *s)
 {
 dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", s);
@@ -24,10 +26,11 @@ exit(98);
 }
 
 /**
- * write_error_99 - Test write errors
- * @s: pointer to file name
+ * write_error_99 - Test write errors.
+ * @s: pointer to file name.
  * Return: 99.
  */
+
 void write_error_99(char *s)
 {
 dprintf(STDERR_FILENO, "Error: Can't write to %s\n", s);
@@ -35,10 +38,11 @@ exit(99);
 }
 
 /**
- * close_error_100 - Test close errors
- * @fd: file descriptor
+ * close_error_100 - Test close errors.
+ * @fd: file descriptor.
  * Return: 100.
  */
+
 void close_error_100(int fd)
 {
 dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd);
@@ -46,12 +50,11 @@ exit(100);
 }
 
 /**
- * main - copy from a file to another
- * @arg: argument
- * @nb_arg: integer
+ * main - copy from a file to another.
+ * @arg: argument.
+ * @nb_arg: integer.
  * Return: 0 on success, exit with errors oterwise.
  */
-
 
 
 int main(int nb_arg, char **arg)
