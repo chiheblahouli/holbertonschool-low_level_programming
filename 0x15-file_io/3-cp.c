@@ -52,8 +52,9 @@ exit(100);
 
 /**
  * main - copy from a file to another.
- * @arg: argument.
- * @nb_arg: integer.
+ * @nb_arg: number of arguments.
+ * @arg: arguments.
+ *
  * Return: 0 on success, exit with errors oterwise.
  */
 
@@ -65,17 +66,12 @@ char buffer[1024];
 
 if (nb_arg != 3)
 usage_error_97();
-
-
 if (arg[1] == NULL)
 read_error_98(arg[1]);
-
-
 f1 = open(arg[1], O_RDONLY);
 if (f1 == -1)
 read_error_98(arg[1]);
-
-f2 = open(arg[2], O_CREAT | O_TRUNC | O_RDWR, 0664);
+f2 = open(arg[2], O_CREAT | O_TRUNC | O_WRONLY, 0664);
 if (f2 == -1)
 write_error_99(arg[2]);
 
@@ -84,7 +80,6 @@ while (content1)
 content1 = read(f1, buffer, 1024);
 if (content1  == -1)
 read_error_98(arg[1]);
-
 if (content1 > 0)
 {
 content2 = write(f2, buffer, content1);
@@ -92,16 +87,11 @@ if (content2 == -1)
 write_error_99(arg[2]);
 }
 }
-
-
 content1 = close(f1);
 if (content1 == -1)
 close_error_100(content1);
-
 content2 = close(f2);
 if (content2 == -1)
 close_error_100(content2);
 return (0);
 }
-
-
