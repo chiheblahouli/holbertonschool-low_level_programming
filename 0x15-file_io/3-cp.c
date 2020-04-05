@@ -61,7 +61,7 @@ exit(100);
 int main(int nb_arg, char **arg)
 {
 int f1, f2, content1, content2, c1, c2;
-char buffer[1024];
+char *buffer[1024];
 
 if (nb_arg != 3)
 usage_error_97();
@@ -75,15 +75,23 @@ f2 = open(arg[2], O_CREAT | O_TRUNC | O_RDWR, 664);
 if (f2 == -1)
 write_error_99(arg[2]);
 
-do {
-	content1 = read(f1, buffer, 1024);
-	if (content1 == -1)
-	read_error_98(arg[1]);
 
-	content2 = write(f2, buffer, 1024);
+content1 = read(f1, buffer, 1024);
+
+
+if (content1 == -1)
+read_error_98(arg[1]);
+
+while (content1 != 0)
+{
+	content2 = write(f2, buffer, content1);
 	if (content2 == -1)
-	write_error_99(arg[2]);
-} while (content2 == 1024);
+	write_error(arg[2]);
+	content1 = read(file_from, buffer, 1024);
+	if (content1  == -1)
+	read_error_98(arg[1]);
+}
+
 
 c1 = close(f1);
 if (c1 == -1)
