@@ -1,49 +1,43 @@
 #include "holberton.h"
+
 /**
- * print_times_table - prints tables.
- * @n: integer.
- * Return: Always 0.
+ * print_times_table - print times table of the specified dimension
+ * @n: Dimension of times table
+ *
+ * Return: void
  */
+
 void print_times_table(int n)
 {
-{
-	int x = 0, y, z;
+	int i;
+	int j;
+	int k;
 
-	if (n > 15 || n < 0)
+	if (n < 0 || n > 15)
 		return;
-	while (x <= n)
+
+	for (i = 0; i <= n; ++i)
 	{
-		for (y = 0; y <= n; y++)
+		for (j = 0; j <= n; ++j)
 		{
-			z = x * y;
-			if (z > 99)
+			if (j == 0)
 			{
-				_putchar(z / 100 + '0');
-				_putchar((z / 10 % 10) + '0');
-				_putchar(z % 10 + '0');
-			}
-			else if (z > 9)
-			{
-				_putchar(' ');
-				_putchar(z / 10 + '0');
-				_putchar(z % 10 + '0');
-			}
-			else if (y != 0)
-			{
-				_putchar(' ');
-				_putchar(' ');
-				_putchar(z + '0');
+				_putchar('0');
 			}
 			else
-				_putchar(z + '0');
+			{
+				k = i * j;
+				_putchar((k < 100) ? ' ' : ('0' + k / 100));
+				_putchar((k <  10) ? ' ' : ('0' + k / 10 % 10));
+				_putchar('0' + k % 10);
+			}
 
-			if (y != n)
+			if (j != n)
 			{
 				_putchar(',');
 				_putchar(' ');
 			}
 		}
 		_putchar('\n');
-		x++;
 	}
 }
