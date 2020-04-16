@@ -6,28 +6,30 @@
  * Return: Always 0.
  */
 int delete_nodeint_at_index(listint_t **head, unsigned int index)
-unsigned int i = 0;
-listint_t *road_runner;
-listint_t *bowl;
-road_runner = *head;
-if (!head || !*head)
-return (-1);
-if (index == 0)
+
 {
-road_runner = (*head)->next;
-free(*head);
-*head = road_runner;
-return (1);
-}
-while ((road_runner != NULL) && (i != index - 1))
-{
-road_runner = road_runner->next;
-i++;
-if (road_runner == NULL)
-return (-1);
-}
-bowl = road_runner->next;
-road_runner->next = bowl->next;
-free(bowl);
-return (1);
+
+	listint_t *temp, *nxt;
+	unsigned int i = 0;
+
+	temp = *head;
+	if (*head == NULL)
+		return (-1);
+	if (index == 0)
+	{
+		*head = temp->next;
+		free(temp);
+		return (1);
+	}
+	while (temp != NULL && i < index - 1)
+	{
+		temp = temp->next;
+		i++;
+	}
+	if (temp == NULL || temp->next == NULL)
+		return (-1);
+	nxt = temp->next->next;
+	free(temp->next);
+	temp->next = nxt;
+	return (1);
 }
