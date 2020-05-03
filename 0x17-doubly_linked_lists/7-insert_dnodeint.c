@@ -1,5 +1,4 @@
 #include "lists.h"
-
 /**
  * insert_dnodeint_at_index - inserts a node at specified position in main
  * @h: pointer to pointer of first node in linked list
@@ -47,7 +46,6 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 }
 	tmp = tmp->next;
 }
-
 	free(map);
-		return (NULL);
+	return (NULL);
 }
