@@ -33,9 +33,9 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 
 		return (map);
 	}
-for (counter = 0; tmp->next || counter == idx - 1; counter++)
+for (counteur = 0; tmp->next || counteur == idx - 1; counteur++)
 	{
-		if (counter == idx - 1 && tmp->next)
+		if (counteur == idx - 1 && tmp->next)
 		{
 		tmp->next->prev = map;
 		map->next = tmp->next;
