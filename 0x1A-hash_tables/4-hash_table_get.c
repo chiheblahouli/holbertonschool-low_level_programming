@@ -14,9 +14,10 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 
 	if (ht == NULL || key == NULL || ht->array == NULL)
 		return (NULL);
-	index = key_index((unsigned char *)key, ht->size);
+	index = key_index((const unsigned char *)key, ht->size);
 	node = ht->array[index];
-	while (node != NULL)
+
+	while (node)
 	{
 		if (strcmp(node->key, key) == 0)
 			break;
