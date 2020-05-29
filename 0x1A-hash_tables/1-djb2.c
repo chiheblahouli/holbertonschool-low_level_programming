@@ -2,7 +2,7 @@
 
 /**
  *hash_djb2 - create A function of hash djb2
- *@str: The string that entry which represent the key 
+ *@str: The string that entry which represent the key
  *Return: returns hash value
  */
 unsigned long int hash_djb2(const unsigned char *str)
