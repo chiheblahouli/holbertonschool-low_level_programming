@@ -4,15 +4,13 @@ OBJ = $(patsubst %.c, %.o, $(SRC))
 NAME = holberton
 RM = rm -f
 CFLAGS = -Wall -Werror -Wextra -pedantic
-
-
-all: $(OBJ)
-	$(CC) $(CFLAG) $(OBJ) -o $(NAME)
+all: $(OBJ) m.h
+	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
 clean:
 	$(RM) *~ $(NAME)
 oclean:
-	$(RM) $(OBJ)
-fclean: clean oclean
+	$(RM) *.o
+fclean:
+	$(RM) $(NAME) *.o *~
 re: oclean $(OBJ)
 	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
-.PHONY: clean fclean<
