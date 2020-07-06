@@ -1,53 +1,80 @@
-#include <stdlib.h>
-#include <string.h>
-#include <stdio.h>
 #include "hash_tables.h"
-
 /**
- * hash_table_set - add element to a hash table
- *@ht: the hash table to add
- *@key: password.
- *@value: Mean.
- * Return: Always 0.
+ * node_insert - function to insert new node
+ * @key: key entry
+ * @value: value to store
+ * Return: pointer to the newly created node
+**/
+hash_node_t *node_insert(const char *key, const char *value)
+{
+	hash_node_t *ptonode;
+	char *dupk, *dupv;
+
+	ptonode = malloc(sizeof(hash_node_t));
+	if (ptonode == NULL)
+	{
+		return (NULL);
+	}
+	dupk = strdup(key);
+	dupv = strdup(value);
+	if (dupk == NULL || dupv == NULL)
+	{
+		free(ptonode);
+		return (NULL);
+	}
+	ptonode->key = dupk;
+	ptonode->value = dupv;
+	ptonode->next = NULL;
+	return (ptonode);
+}
+/**
+ * hash_table_set - insert a key to a value in the hash table
+ * @ht: pointer to the hashtable
+ * @key: key entry corresonding to the value
+ * @value: value entry to store
+ *
+ * Return: 1 if successful, 0 otherwise
  */
+
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-	hash_node_t *hn;
-	hash_node_t *tmp;
-	unsigned long int i = 0;
+	unsigned long int index = 0;
+	hash_node_t *ptonode;
+	hash_node_t *temp;
+	char *dups;
+
 
 	if (ht == NULL || key == NULL)
 		return (0);
 
-	i = key_index((void *)key, ht->size);
-	tmp = ht->array[i];
+	index = key_index((const unsigned char *)key, ht->size);
+	temp = ht->array[index];
 
-
-	while (tmp)
+	while (temp != NULL)
 	{
-		if (strcmp((const char *)key, tmp->key) == 0)
+		if (strcmp(temp->key, key) == 0)
 		{
-			free(tmp->value);
-			tmp->value = strdup(value);
+			dups = strdup(value);
+			if (dups == NULL)
+				return (0);
+			free(temp->value);
+			temp->value = dups;
+
 			return (1);
+
 		}
-		tmp = tmp->next;
+		temp = temp->next;
 	}
-
-
-	if (tmp == NULL)
+	ptonode = node_insert(key, value);
+	if (ptonode == NULL)
+		return (0);
+	if (ht->array[index] != NULL)
 	{
-		hn = malloc(sizeof(hash_node_t));
-		if (!hn)
-			return (0);
-
-		hn->key = strdup(key);
-		hn->value = strdup(value);
-		hn->next = ht->array[i];
-		ht->array[i] = hn;
-		return (1);
+		ptonode->next = ht->array[index];
+		ht->array[index] = ptonode;
 	}
-
-
+	else
+		ptonode->next = NULL;
+		ht->array[index] = ptonode;
 	return (1);
 }
