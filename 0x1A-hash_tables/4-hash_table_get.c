@@ -7,24 +7,22 @@
  * @key: The key to retrieve the value.
  * Return: returns the pointer of the value.
  */
+
 char *hash_table_get(const hash_table_t *ht, const char *key)
 {
-	unsigned long int index = 0;
-	hash_node_t *node;
+	unsigned int i;
+	hash_node_t *tmp;
 
-	if (ht == NULL || key == NULL || ht->array == NULL)
+	if (!key || !ht)
 		return (NULL);
-	index = key_index((const unsigned char *)key, ht->size);
-	node = ht->array[index];
 
-	while (node)
+	i = key_index((const unsigned char *)key, ht->size);
+	tmp = ht->array[i];
+	while (tmp)
 	{
-		if (strcmp(node->key, key) == 0)
-			break;
-		node = node->next;
+		if (strcmp(tmp->key, key) == 0)
+			return (tmp->value);
+		tmp = tmp->next;
 	}
-	if (node == NULL)
-		return (NULL);
-	else
-		return (node->value);
+	return (NULL);
 }
