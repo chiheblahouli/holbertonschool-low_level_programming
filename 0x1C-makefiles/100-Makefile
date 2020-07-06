@@ -11,6 +11,6 @@ clean:
 oclean:
 	$(RM) $(OBJÃ)
 fclean: clear oclean
-re: oclean $(OBJ)
-	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
+re: fclean all
+
 .PHONY: clean fclean
