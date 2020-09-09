@@ -5,8 +5,8 @@
  * @size: size of array.
  * return: void
  */
-void print_array(int *array, size_t size)
 
+void print_array(int *array, size_t size)
 {
 	size_t i;
 
@@ -19,7 +19,7 @@ void print_array(int *array, size_t size)
 	}
 	printf("\n");
 }
-
+/**
  * binary_search - binary_search
  * @array: array/
  * @size: size.
