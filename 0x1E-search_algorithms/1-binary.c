@@ -1,4 +1,5 @@
 #include "search_algos.h"
+1111
 /**
  * print_array - prints an array of integers.
  * @array: array to print/
@@ -31,7 +32,7 @@ int binary_search(int *array, size_t size, int value)
 	size_t l, m, r;
 
 	if (array != NULL && size > 0)
-	{
+	{22s
 		l = 0;
 		r = size - 1;
 		print_array(array + l, r + 1 - l);
